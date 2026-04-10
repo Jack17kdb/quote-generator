@@ -29,14 +29,14 @@ A **Next.js 13+ App Router project** that fetches inspirational quotes from an e
 
 ## 📁 Project Structure
 
-src/
-├── app/
-│ ├── api/
-│ │ └── quote/
-│ │ └── route.ts
-│ ├── components/
-│ │ └── QuoteBox.tsx
-│ ├── page.tsx
+    src/
+    ├── app/
+    │ ├── api/
+    │ │ └── quote/
+    │ │ └── route.ts
+    │ ├── components/
+    │ │ └── QuoteBox.tsx
+    │ ├── page.tsx
 
 ---
 
