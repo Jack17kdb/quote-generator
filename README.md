@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Quote Generator (Next.js + TypeScript)
 
-## Getting Started
+A **Next.js 13+ App Router project** that fetches inspirational quotes from an external API and demonstrates:
 
-First, run the development server:
+- Server Components
+- Client Components
+- API Routes (Route Handlers)
+- Loading states
+- TypeScript integration
+- SEO setup
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📸 Preview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> A responsive quote generator with loading spinner and API-powered random quotes.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ⚙️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js (App Router)
+- TypeScript
+- React
+- Tailwind CSS
+- API Ninjas Quotes API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
+src/
+├── app/
+│ ├── api/
+│ │ └── quote/
+│ │ └── route.ts
+│ ├── components/
+│ │ └── QuoteBox.tsx
+│ ├── page.tsx
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Features
+
+### ✅ Server-Side Data Fetching
+Initial quote is fetched on the server for better performance and SEO.
+
+### ✅ Client-Side Interactivity
+Users can fetch new quotes without refreshing the page.
+
+### ✅ Loading State
+Spinner shown while fetching new quotes.
+
+### ✅ API Route Abstraction
+External API is hidden behind a Next.js API route for better architecture.
+
+---
+
+## 🔌 API Used
+
+### API Ninjas Quotes API
+
+https://api.api-ninjas.com/v2/randomquotes
+
+Requires API key:
+
+X-Api-Key: YOUR_API_KEY
+
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env.local` file:
+
+API_NINJAS_KEY=your_api_key_here
+
+
+---
+
+## 🧠 How It Works
+
+### 1. Server Component (`page.tsx`)
+- Fetches initial quote on the server
+- Passes it as props to client component
+
+### 2. Client Component (`QuoteBox.tsx`)
+- Stores quote in React state
+- Fetches new quotes on button click
+- Shows loading spinner during requests
+
+### 3. API Route (`/api/quote`)
+- Calls external API securely
+- Returns normalized quote object
+- Keeps API key hidden from client
